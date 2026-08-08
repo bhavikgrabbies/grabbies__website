@@ -1,0 +1,13 @@
+{
+  "hero_eyebrow": "Delhi NCR's Smart Vending Network",
+  "hero_headline": "Grab. Go. Enjoy.",
+  "hero_lead": "Grabbies places, manages and restocks smart vending machines at premium gyms, corporate offices, hospitals and campuses — cashless, 24/7, and fully managed from day one.",
+  "verticals": [
+    { "title": "Corporate Offices", "description": "A dedicated pantry machine, stocked to your team's taste." },
+    { "title": "Gyms & Fitness Clubs", "description": "Protein bars, sports drinks and recovery snacks on the floor." },
+    { "title": "Hospitals & Clinics", "description": "Round-the-clock access for staff, patients and visitors." },
+    { "title": "Colleges & Campuses", "description": "Affordable essentials and quick UPI payments between classes." },
+    { "title": "Malls & Retail", "description": "High-footfall placements with broad snack and beverage range." },
+    { "title": "Events & Fests", "description": "Short-term deployment for high-traffic events, on demand." }
+  ]
+}

@@ -1,0 +1,5 @@
+.cta-band { background: var(--ink); border-radius: var(--radius-lg); padding: 80px 48px; text-align: center; }
+.cta-band h2 { color: #fff; }
+.cta-band p { color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 32px; font-size: 1.05rem; }
+.cta-band .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+@media (max-width: 600px) { .cta-band { padding: 52px 26px; } }

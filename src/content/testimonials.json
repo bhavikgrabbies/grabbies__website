@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "quote": "The machine has been running smoothly for months. Restocking always on time, maintenance handled without us following up. Our members love having protein bars right on the floor.",
+      "name": "Gym Owner",
+      "role": "Anytime Fitness Franchise, Delhi NCR"
+    },
+    {
+      "quote": "We needed a low-effort pantry solution. Grabbies set up within a week, tailored the product mix to our team's preferences, and statements are always on time.",
+      "name": "HR Manager",
+      "role": "Corporate Office, Gurugram"
+    },
+    {
+      "quote": "Students needed affordable snack access between classes. Good products, quick UPI payment, and a machine that's never empty.",
+      "name": "Administration Head",
+      "role": "University Campus, Delhi NCR"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.contact-info-card { background: var(--bg-soft); border-radius: var(--radius-lg); padding: 44px; height: fit-content; }
+.contact-info-item { margin-bottom: 26px; }
+.contact-info-item b { display: block; color: var(--ink); font-size: 0.98rem; margin-bottom: 4px; }
+.contact-info-item span, .contact-info-item a { color: var(--body-soft); font-size: 0.92rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { margin-bottom: 18px; }
+.field label { display: block; font-weight: 700; font-size: 0.85rem; color: var(--ink); margin-bottom: 8px; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 13px 16px; border-radius: 12px; border: 1.5px solid var(--line);
+  font-family: var(--font-body); font-size: 0.94rem; color: var(--ink); background: #fff;
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--orange); }
+.field textarea { resize: vertical; min-height: 100px; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }

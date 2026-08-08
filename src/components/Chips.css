@@ -1,0 +1,6 @@
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.chip {
+  padding: 11px 20px; border-radius: 100px; border: 1px solid var(--line);
+  font-weight: 600; font-size: 0.86rem; color: var(--ink); transition: all .2s ease;
+}
+.chip:hover { border-color: var(--orange); background: var(--orange-tint); }

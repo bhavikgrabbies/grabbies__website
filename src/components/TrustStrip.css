@@ -1,0 +1,3 @@
+.trust-strip { background: var(--ink); padding: 24px 0; }
+.trust-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 44px; }
+.trust-grid span { color: rgba(255,255,255,0.85); font-weight: 600; font-size: 0.9rem; }

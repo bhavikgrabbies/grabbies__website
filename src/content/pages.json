@@ -1,0 +1,27 @@
+{
+  "machines": {
+    "eyebrow": "Our Machines",
+    "title": "Smart vending, built for always-on retail",
+    "subtitle": "Every Grabbies machine ships with touchscreen ordering, cashless payments and a cloud dashboard for remote monitoring — so restocking and maintenance never fall on you."
+  },
+  "solutions": {
+    "eyebrow": "Solutions",
+    "title": "Four ways to work with Grabbies",
+    "subtitle": "Whichever seat you're in — corporate, venue owner, brand or aspiring operator — there's a straightforward way to partner with us."
+  },
+  "clients": {
+    "eyebrow": "Clients",
+    "title": "Partners across Delhi NCR",
+    "subtitle": "Gyms, corporate offices and campuses that trust Grabbies to keep their spaces stocked, 24/7."
+  },
+  "about": {
+    "eyebrow": "About Grabbies",
+    "title": "A full-stack smart retail brand, built for Delhi NCR",
+    "subtitle": "Revolutionising access to ready-to-eat meals and daily essentials — designed for convenience and speed."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your space",
+    "subtitle": "Book a demo, ask a question, or start a franchise conversation — we usually respond within a few hours."
+  }
+}

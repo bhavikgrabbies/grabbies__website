@@ -1,0 +1,12 @@
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.testimonial-card { background: #fff; padding: 40px 36px; display: flex; flex-direction: column; }
+.quote-mark { font-family: var(--font-head); font-size: 2.6rem; color: var(--orange); line-height: 1; margin-bottom: 8px; }
+.quote { color: var(--ink); font-size: 0.98rem; flex: 1; line-height: 1.65; }
+.testimonial-who { display: flex; align-items: center; gap: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.avatar {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+}
+.testimonial-who b { display: block; font-size: 0.9rem; color: var(--ink); }
+.testimonial-who span { font-size: 0.8rem; color: var(--body-soft); }
+@media (max-width: 900px) { .testimonial-grid { grid-template-columns: 1fr; } }

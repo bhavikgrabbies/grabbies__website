@@ -1,0 +1,7 @@
+.verticals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.vertical-card { background: #fff; padding: 44px 36px; transition: background .25s ease; }
+.vertical-card:hover { background: var(--bg-soft); }
+.vertical-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+.vertical-card p { font-size: 0.92rem; color: var(--body-soft); margin: 0; }
+@media (max-width: 900px) { .verticals-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .verticals-grid { grid-template-columns: 1fr; } }

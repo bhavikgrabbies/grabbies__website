@@ -1,0 +1,15 @@
+.segment-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 52px; }
+.segment-tab {
+  padding: 12px 24px; border-radius: 100px; border: 1px solid var(--line); background: #fff;
+  font-family: var(--font-body); font-weight: 700; font-size: 0.88rem; cursor: pointer; color: var(--body); transition: all .18s ease;
+}
+.segment-tab:hover { border-color: var(--ink); }
+.segment-tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.segment-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.segment-panel h3 { font-size: 1.7rem; margin-bottom: 12px; }
+.segment-visual img { border-radius: var(--radius); width: 100%; }
+.segment-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.segment-stat { background: var(--bg-soft); padding: 30px 20px; text-align: center; }
+.segment-stat .value { font-family: var(--font-head); font-weight: 800; font-size: 1.9rem; color: var(--ink); display: block; }
+.segment-stat .label { font-size: 0.78rem; color: var(--body-soft); font-weight: 600; }
+@media (max-width: 860px) { .segment-panel { grid-template-columns: 1fr; gap: 32px; } }
