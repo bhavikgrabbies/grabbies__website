@@ -9,6 +9,20 @@
   </head>
   <body>
     <div id="root"></div>
+    <!--
+      Static hidden form so Netlify's build-time bot can detect the form fields.
+      Netlify scans this actual HTML file at deploy time (it can't see the
+      React-rendered version), then the real form in Contact.tsx submits to it.
+      This must never be shown to visitors — kept hidden via inline style below.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <select name="type"><option>placeholder</option></select>
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
