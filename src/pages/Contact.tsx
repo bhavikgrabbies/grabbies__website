@@ -79,7 +79,7 @@ export default function Contact() {
             ) : (
               <>
                 <p>Tell us a bit about your space and we'll get back to you with next steps.</p>
-                <form name="contact" onSubmit={handleSubmit}>
+                <form name="contact" method="post" onSubmit={handleSubmit}>
                   <input type="hidden" name="form-name" value="contact" />
                   <p style={{ display: 'none' }}>
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>

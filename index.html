@@ -15,7 +15,7 @@
       React-rendered version), then the real form in Contact.tsx submits to it.
       This must never be shown to visitors — kept hidden via inline style below.
     -->
-    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: none;">
       <input type="text" name="name" />
       <input type="tel" name="phone" />
       <input type="email" name="email" />
