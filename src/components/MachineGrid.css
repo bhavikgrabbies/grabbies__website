@@ -20,7 +20,7 @@
   background: var(--bg-soft); border-radius: var(--radius-lg); padding: 48px;
 }
 .machine-featured-media {
-  aspect-ratio: 3/4; max-width: 320px; margin: 0 auto; overflow: hidden; border-radius: var(--radius);
+  width: 100%; max-width: 320px; aspect-ratio: 3/4; margin: 0 auto; overflow: hidden; border-radius: var(--radius);
   background: #fff; display: flex; align-items: center; justify-content: center; padding: 28px;
   box-shadow: 0 20px 40px -24px rgba(16,17,20,0.25);
 }
