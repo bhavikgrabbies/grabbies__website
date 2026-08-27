@@ -57,7 +57,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">How It Works</span>
-            <h2>From enquiry to earning, in three steps</h2>
+            <h2>From enquiry to a live machine, in three steps</h2>
           </div>
           <Steps />
         </div>

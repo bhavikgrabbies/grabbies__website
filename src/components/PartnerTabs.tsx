@@ -35,10 +35,10 @@ const SEGMENTS: Segment[] = [
   },
   {
     key: 'venues', tab: 'For Venue Owners', eyebrow: 'For Venue Owners',
-    title: 'Turn your footfall into monthly income',
-    body: 'Got a gym, hostel, clinic or high-footfall space? We place a Grabbies machine at no setup cost — you earn a share of every sale.',
+    title: 'A managed machine for your space',
+    body: 'Got a gym, hostel, clinic or high-footfall space? We place a Grabbies machine at no setup cost — fully installed and managed by our team.',
     bullets: [
-      { title: 'Monthly Revenue Share', desc: 'Earn a percentage of all sales, deposited monthly.' },
+      { title: 'Zero Setup Cost', desc: 'No upfront cost to host a machine at your location.' },
       { title: 'We Handle Everything', desc: 'Installation, restocking, maintenance. Entirely managed by us.' },
       { title: 'UPI Payments', desc: 'PhonePe, GPay and Paytm on every machine.' },
       { title: 'Monthly Reports', desc: 'Statements every month, always on time.' },
@@ -46,8 +46,8 @@ const SEGMENTS: Segment[] = [
     stats: [
       { value: '₹0', label: 'Setup cost' },
       { value: '100%', label: 'Managed by us' },
-      { value: 'Monthly', label: 'Revenue share' },
-      { value: '24/7', label: 'Passive income' },
+      { value: '24/7', label: 'Machine uptime' },
+      { value: '7–14', label: 'Days to install' },
     ],
   },
   {

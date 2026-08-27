@@ -1,20 +1,9 @@
 {
   "items": [
     {
-      "name": "Grabbies Combo — Dark Series",
-      "image": "/img/machine-dark.png",
-      "tagline": "Snacks, beverages and daily essentials in one always-on unit.",
-      "features": [
-        "Touchscreen ordering",
-        "UPI, card and wallet payments",
-        "Remote inventory monitoring",
-        "Temperature-controlled shelving"
-      ]
-    },
-    {
-      "name": "Grabbies Combo — Light Series",
+      "name": "Grabbies Combo",
       "image": "/img/machine-light.png",
-      "tagline": "The same full combo line-up, in a bright finish for lobbies and lounges.",
+      "tagline": "Snacks, beverages and daily essentials in one always-on unit.",
       "features": [
         "Touchscreen ordering",
         "UPI, card and wallet payments",

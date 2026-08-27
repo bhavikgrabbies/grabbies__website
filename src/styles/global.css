@@ -42,8 +42,8 @@ h1, h2, h3, h4 {
 }
 p { margin: 0 0 1em; }
 .container { max-width: var(--container); margin: 0 auto; padding: 0 28px; }
-section { padding: 120px 0; }
-@media (max-width: 720px) { section { padding: 72px 0; } .container { padding: 0 20px; } }
+section { padding: 88px 0; }
+@media (max-width: 720px) { section { padding: 56px 0; } .container { padding: 0 20px; } }
 
 /* Minimal, restrained utility classes — verdantic-style: lots of whitespace, huge type, quiet color */
 .eyebrow {

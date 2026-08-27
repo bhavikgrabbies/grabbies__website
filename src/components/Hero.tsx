@@ -12,24 +12,19 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <div className="hero-media">
-        <img src={img.hero} alt="Team using a Grabbies smart vending machine" />
-        <div className="hero-scrim" />
-      </div>
-      <div className="hero-content">
+      <div className="container hero-grid">
         <div ref={ref} className="fade-up hero-copy">
-          <span className="eyebrow eyebrow-light">{h.hero_eyebrow}</span>
+          <span className="eyebrow">{h.hero_eyebrow}</span>
           <h1>{h.hero_headline}</h1>
           <p>{h.hero_lead}</p>
           <div className="hero-actions">
             <Link to="/contact" className="btn btn-primary">Book a Demo</Link>
-            <Link to="/solutions" className="btn btn-outline-light">Partner With Us</Link>
+            <Link to="/solutions" className="btn btn-outline">Partner With Us</Link>
           </div>
         </div>
-      </div>
-      <div className="hero-scroll-cue">
-        <span>Scroll</span>
-        <div className="line" />
+        <div className="hero-media">
+          <img src={img.hero} alt="Team using a Grabbies smart vending machine" />
+        </div>
       </div>
     </section>
   );

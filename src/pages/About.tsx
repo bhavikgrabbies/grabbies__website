@@ -17,9 +17,9 @@ export default function About() {
         <div className="container">
           <div className="split">
             <div>
-              <h2>6 meals a day, wherever you are</h2>
-              <p>At the core of Grabbies is a specialised supply chain and a tech-enabled ecosystem that supports 6-meal-a-day consumption. Whether it's a quick bite between meetings or a wholesome lunch during a busy day, our offerings are curated to meet the diverse dietary and lifestyle needs of professionals, students and urban commuters.</p>
-              <p>From hardware to software, logistics to last-mile delivery, Grabbies delivers a turnkey retail experience that combines efficiency, automation and customer satisfaction.</p>
+              <h2>Convenience, wherever you are</h2>
+              <p>At the core of Grabbies is a tech-enabled ecosystem built around snacks, beverages and daily essentials — stocked and curated to meet the needs of professionals, students and urban commuters, anytime they need something on the go.</p>
+              <p>From hardware to software, logistics to last-mile restocking, Grabbies delivers a turnkey retail experience that combines efficiency, automation and customer satisfaction.</p>
             </div>
             <img src={img.lounge} alt="Grabbies machines installed in a corporate lounge" style={{ borderRadius: 'var(--radius)' }} />
           </div>
@@ -47,10 +47,10 @@ export default function About() {
             <img src={images.banner} alt="Delhi NCR's fastest growing vending network" style={{ borderRadius: 'var(--radius)' }} />
             <div>
               <span className="eyebrow">Under The Hood</span>
-              <h2>Hardware, software and a mobile app</h2>
+              <h2>Hardware and software that just works</h2>
               <ul className="segment-list">
                 <li><span className="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Kiosk & IoT</b><span>A cloud-connected interface for remote monitoring of inventory, product health, shelf life and temperature.</span></div></li>
-                <li><span className="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Mobile App</b><span>Locate nearby machines, browse menus and offers, and pay via cards, UPI or net banking.</span></div></li>
+                <li><span className="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>UPI & Card Payments</b><span>PhonePe, GPay, Paytm and cards accepted on every machine, every transaction logged in real time.</span></div></li>
                 <li><span className="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Partner App</b><span>Connects distribution staff, brands and location partners, enabling the launch of any SKU at any location.</span></div></li>
               </ul>
             </div>
