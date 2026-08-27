@@ -9,7 +9,6 @@ import PartnerTabs from '../components/PartnerTabs';
 import Testimonials from '../components/Testimonials';
 import CTABand from '../components/CTABand';
 import Faq from '../components/Faq';
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export default function Home() {
@@ -37,9 +36,6 @@ export default function Home() {
             <p>Touchscreen ordering, cashless payments and remote monitoring, in a finish to match your space.</p>
           </div>
           <MachineGrid limit={2} />
-          <div style={{ textAlign: 'center', marginTop: 48 }}>
-            <Link to="/machines" className="btn btn-outline">View All Machines</Link>
-          </div>
         </div>
       </section>
 

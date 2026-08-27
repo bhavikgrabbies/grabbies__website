@@ -16,12 +16,12 @@
 .btn-block { width: 100%; }
 
 .machine-featured {
-  display: grid; grid-template-columns: 0.8fr 1fr; gap: 56px; align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
   background: var(--bg-soft); border-radius: var(--radius-lg); padding: 48px;
 }
 .machine-featured-media {
-  width: 100%; max-width: 320px; aspect-ratio: 3/4; margin: 0 auto; overflow: hidden; border-radius: var(--radius);
-  background: #fff; display: flex; align-items: center; justify-content: center; padding: 28px;
+  width: 100%; max-width: 460px; aspect-ratio: 3/4; margin: 0 auto; overflow: hidden; border-radius: var(--radius);
+  background: #fff; display: flex; align-items: center; justify-content: center; padding: 32px;
   box-shadow: 0 20px 40px -24px rgba(16,17,20,0.25);
 }
 .machine-featured-media img { width: 100%; height: 100%; object-fit: contain; }
