@@ -15,70 +15,79 @@ const MINIMIZE_AT = 60;
 
 export default function Header() {
   const s = settings as Settings;
-  const [scrollY, setScrollY] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+  const [pastThreshold, setPastThreshold] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [open, setOpen] = useState(false);
-  const lastScrollY = useRef(0);
+  const sentinelRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
+  // IntersectionObserver on a sentinel pinned to the top of the document —
+  // more reliable across mobile browsers than reading window.scrollY on every
+  // scroll tick, which wasn't triggering re-renders on some phones in testing.
   useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      // Scrolling down re-collapses a manually expanded header; scrolling up leaves it as-is.
-      if (y > lastScrollY.current + 5) setExpanded(false);
-      lastScrollY.current = y;
-      setScrollY(y);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const isPast = !entry.isIntersecting;
+        setScrolled(isPast);
+        setPastThreshold(isPast);
+        if (isPast) setExpanded(false);
+      },
+      { rootMargin: `-${MINIMIZE_AT}px 0px 0px 0px`, threshold: 0 }
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => setOpen(false), [location.pathname]);
 
-  const scrolled = scrollY > 10;
-  const minimized = scrollY > MINIMIZE_AT && !expanded;
+  const minimized = pastThreshold && !expanded;
 
   return (
-    <header className={`site-header${scrolled ? ' scrolled' : ''}${minimized ? ' minimized' : ''}`}>
-      <div className="header-inner">
-        <Link to="/" className="logo">
-          <img src="/img/logo.svg" alt={s.brand} />
-        </Link>
-        <nav className={`nav-links${open ? ' open' : ''}`}>
-          {NAV.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className={location.pathname === item.to ? 'active' : ''}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="nav-cta">
-          <a className="nav-phone" href={`tel:${s.phone_tel}`}>{s.phone_display}</a>
-          <Link to="/contact" className="btn btn-primary btn-sm">Book a Demo</Link>
-          {minimized && (
+    <>
+      <div ref={sentinelRef} className="scroll-sentinel" aria-hidden="true" />
+      <header className={`site-header${scrolled ? ' scrolled' : ''}${minimized ? ' minimized' : ''}`}>
+        <div className="header-inner">
+          <Link to="/" className="logo">
+            <img src="/img/logo.svg" alt={s.brand} />
+          </Link>
+          <nav className={`nav-links${open ? ' open' : ''}`}>
+            {NAV.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className={location.pathname === item.to ? 'active' : ''}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="nav-cta">
+            <a className="nav-phone" href={`tel:${s.phone_tel}`}>{s.phone_display}</a>
+            <Link to="/contact" className="btn btn-primary btn-sm">Book a Demo</Link>
+            {minimized && (
+              <button
+                className="nav-expand"
+                aria-label="Expand header"
+                onClick={() => setExpanded(true)}
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="m6 9 6 6 6-6" /></svg>
+              </button>
+            )}
             <button
-              className="nav-expand"
-              aria-label="Expand header"
-              onClick={() => setExpanded(true)}
+              className="nav-toggle"
+              aria-label="Menu"
+              onClick={() => setOpen((v) => !v)}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="m6 9 6 6 6-6" /></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
             </button>
-          )}
-          <button
-            className="nav-toggle"
-            aria-label="Menu"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M3 6h18M3 12h18M3 18h18" />
-            </svg>
-          </button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }

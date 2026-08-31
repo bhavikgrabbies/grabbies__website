@@ -1,3 +1,7 @@
+.scroll-sentinel {
+  position: absolute; top: 0; left: 0; width: 1px; height: 1px;
+  pointer-events: none; visibility: hidden;
+}
 .site-header {
   position: sticky; top: 0; z-index: 100;
   background: rgba(255,255,255,0.7);
@@ -12,10 +16,11 @@
   padding: 18px 28px; max-width: var(--container); margin: 0 auto;
   transition: padding .25s ease;
 }
-.site-header.minimized .header-inner { padding: 8px 20px; }
+.site-header.minimized .header-inner { padding: 4px 20px; }
+.site-header.minimized { box-shadow: 0 6px 20px -12px rgba(16,17,20,0.25); }
 .logo { display: flex; align-items: center; }
 .logo img { height: 42px; width: auto; transition: height .25s ease; }
-.site-header.minimized .logo img { height: 26px; }
+.site-header.minimized .logo img { height: 22px; }
 .nav-expand {
   display: flex; align-items: center; justify-content: center;
   width: 34px; height: 34px; border-radius: 9px; border: 1px solid var(--line);
