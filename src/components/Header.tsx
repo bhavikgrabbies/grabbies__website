@@ -19,7 +19,9 @@ export default function Header() {
   const [pastThreshold, setPastThreshold] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [open, setOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(110);
   const sentinelRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const location = useLocation();
 
   // IntersectionObserver on a sentinel pinned to the top of the document —
@@ -41,6 +43,20 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
+  // The header is position:fixed (iOS Safari doesn't reliably repaint
+  // position:sticky elements when their own padding/height changes), so a
+  // spacer below it has to reserve the exact same space. Measure the real
+  // rendered height instead of guessing, so it's never off by a few pixels.
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    const ro = new ResizeObserver(([entry]) => {
+      setHeaderHeight(entry.contentRect.height);
+    });
+    ro.observe(header);
+    return () => ro.disconnect();
+  }, []);
+
   useEffect(() => setOpen(false), [location.pathname]);
 
   const minimized = pastThreshold && !expanded;
@@ -48,7 +64,7 @@ export default function Header() {
   return (
     <>
       <div ref={sentinelRef} className="scroll-sentinel" aria-hidden="true" />
-      <header className={`site-header${scrolled ? ' scrolled' : ''}${minimized ? ' minimized' : ''}`}>
+      <header ref={headerRef} className={`site-header${scrolled ? ' scrolled' : ''}${minimized ? ' minimized' : ''}`}>
         <div className="header-inner">
           <Link to="/" className="logo">
             <img src="/img/logo.svg" alt={s.brand} />
@@ -88,6 +104,7 @@ export default function Header() {
           </div>
         </div>
       </header>
+      <div className="header-spacer" style={{ height: headerHeight }} aria-hidden="true" />
     </>
   );
 }
