@@ -20,27 +20,43 @@ export default function Header() {
   const [expanded, setExpanded] = useState(false);
   const [open, setOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(110);
+  const [debugScrollY, setDebugScrollY] = useState(0);
   const sentinelRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const location = useLocation();
 
-  // IntersectionObserver on a sentinel pinned to the top of the document —
-  // more reliable across mobile browsers than reading window.scrollY on every
-  // scroll tick, which wasn't triggering re-renders on some phones in testing.
+  // Redundant detection: a plain scroll listener AND an IntersectionObserver
+  // both drive the same state, so if one has a device-specific quirk the
+  // other still works.
   useEffect(() => {
+    const applyPast = (isPast: boolean) => {
+      setScrolled(isPast);
+      setPastThreshold(isPast);
+      if (isPast) setExpanded(false);
+    };
+
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop || 0;
+      setDebugScrollY(y);
+      applyPast(y > MINIMIZE_AT);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    let observer: IntersectionObserver | undefined;
     const sentinel = sentinelRef.current;
-    if (!sentinel) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        const isPast = !entry.isIntersecting;
-        setScrolled(isPast);
-        setPastThreshold(isPast);
-        if (isPast) setExpanded(false);
-      },
-      { rootMargin: `-${MINIMIZE_AT}px 0px 0px 0px`, threshold: 0 }
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
+    if (sentinel && 'IntersectionObserver' in window) {
+      observer = new IntersectionObserver(
+        ([entry]) => applyPast(!entry.isIntersecting),
+        { rootMargin: `-${MINIMIZE_AT}px 0px 0px 0px`, threshold: 0 }
+      );
+      observer.observe(sentinel);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      observer?.disconnect();
+    };
   }, []);
 
   // The header is position:fixed (iOS Safari doesn't reliably repaint
@@ -50,6 +66,7 @@ export default function Header() {
   useEffect(() => {
     const header = headerRef.current;
     if (!header) return;
+    if (!('ResizeObserver' in window)) return;
     const ro = new ResizeObserver(([entry]) => {
       setHeaderHeight(entry.contentRect.height);
     });
@@ -103,6 +120,8 @@ export default function Header() {
             </button>
           </div>
         </div>
+        {/* TEMPORARY debug readout — remove once the fix is confirmed working. */}
+        <div className="header-debug">y:{Math.round(debugScrollY)} min:{String(minimized)}</div>
       </header>
       <div className="header-spacer" style={{ height: headerHeight }} aria-hidden="true" />
     </>

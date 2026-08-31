@@ -1,6 +1,11 @@
 .scroll-sentinel {
   position: absolute; top: 0; left: 0; width: 1px; height: 1px;
-  pointer-events: none; visibility: hidden;
+  pointer-events: none; opacity: 0;
+}
+.header-debug {
+  position: fixed; top: 4px; right: 4px; z-index: 999;
+  background: #000; color: #0f0; font-family: monospace; font-size: 11px;
+  padding: 3px 8px; border-radius: 6px; pointer-events: none;
 }
 .header-spacer { transition: height .25s ease; }
 .site-header {
