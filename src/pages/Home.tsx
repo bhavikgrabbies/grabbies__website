@@ -10,7 +10,6 @@ import CTABand from '../components/CTABand';
 import Faq from '../components/Faq';
 import { useEffect } from 'react';
 import marqueeBrands from '../content/marqueeBrands.json';
-import marqueeClients from '../content/marqueeClients.json';
 
 export default function Home() {
   useEffect(() => {
@@ -37,11 +36,11 @@ export default function Home() {
       <section>
         <div className="container">
           <div className="section-head center">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>Who We Work With</span>
-            <h2>Trusted by teams across Delhi NCR</h2>
+            <span className="eyebrow" style={{ justifyContent: 'center' }}>What Our Partners Say</span>
+            <h2>Don't take our word for it</h2>
           </div>
+          <Testimonials />
         </div>
-        <Marquee items={marqueeClients.items} reverse />
       </section>
 
       <section className="bg-soft-section">
@@ -71,16 +70,6 @@ export default function Home() {
             <h2>Four ways to work with us</h2>
           </div>
           <PartnerTabs />
-        </div>
-      </section>
-
-      <section>
-        <div className="container">
-          <div className="section-head center">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>What Our Partners Say</span>
-            <h2>Don't take our word for it</h2>
-          </div>
-          <Testimonials />
         </div>
       </section>
 

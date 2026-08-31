@@ -11,11 +11,6 @@ export interface Settings {
   linkedin: string;
 }
 
-export interface Client {
-  name: string;
-  logo?: string;
-}
-
 export interface Machine {
   name: string;
   image: string;
@@ -55,7 +50,6 @@ export interface PageHero {
 export interface PagesContent {
   machines: PageHero;
   solutions: PageHero;
-  clients: PageHero;
   about: PageHero;
   contact: PageHero;
 }

@@ -1,5 +1,0 @@
-.client-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 48px; }
-.client-logos img { height: 30px; width: auto; opacity: 0.6; filter: grayscale(1); transition: all .2s ease; }
-.client-logos img:hover { opacity: 1; filter: none; }
-.client-name { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; color: var(--body-soft); }
-.badge-empty { text-align: center; padding: 32px; color: var(--body-soft); border: 1px dashed var(--line); border-radius: var(--radius); font-size: 0.9rem; }
