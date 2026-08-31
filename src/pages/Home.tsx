@@ -1,8 +1,7 @@
 import Hero from '../components/Hero';
 import TrustStrip from '../components/TrustStrip';
-import ClientLogos from '../components/ClientLogos';
 import VerticalsGrid from '../components/VerticalsGrid';
-import MachineGrid from '../components/MachineGrid';
+import Marquee from '../components/Marquee';
 import Chips from '../components/Chips';
 import Steps from '../components/Steps';
 import PartnerTabs from '../components/PartnerTabs';
@@ -10,6 +9,8 @@ import Testimonials from '../components/Testimonials';
 import CTABand from '../components/CTABand';
 import Faq from '../components/Faq';
 import { useEffect } from 'react';
+import marqueeBrands from '../content/marqueeBrands.json';
+import marqueeClients from '../content/marqueeClients.json';
 
 export default function Home() {
   useEffect(() => {
@@ -20,26 +21,30 @@ export default function Home() {
       <Hero />
       <TrustStrip />
 
-      <section style={{ padding: '64px 0' }}>
-        <div className="container">
-          <ClientLogos />
-        </div>
-      </section>
-
       <VerticalsGrid />
 
       <section className="bg-soft-section">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">Our Machines</span>
-            <h2>Smart vending, ready to install</h2>
-            <p>Touchscreen ordering, cashless payments and remote monitoring, in a finish to match your space.</p>
+          <div className="section-head center">
+            <span className="eyebrow" style={{ justifyContent: 'center' }}>What's Stocked</span>
+            <h2>Brands you already know</h2>
+            <p>A curated mix of snack, beverage and daily-essential brands, stocked fresh in every machine.</p>
           </div>
-          <MachineGrid limit={2} />
         </div>
+        <Marquee items={marqueeBrands.items} />
       </section>
 
       <section>
+        <div className="container">
+          <div className="section-head center">
+            <span className="eyebrow" style={{ justifyContent: 'center' }}>Who We Work With</span>
+            <h2>Trusted by teams across Delhi NCR</h2>
+          </div>
+        </div>
+        <Marquee items={marqueeClients.items} reverse />
+      </section>
+
+      <section className="bg-soft-section">
         <div className="container">
           <div className="section-head center">
             <span className="eyebrow" style={{ justifyContent: 'center' }}>What's Inside</span>
@@ -49,7 +54,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-soft-section">
+      <section>
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">How It Works</span>
@@ -59,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="bg-soft-section">
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Partner With Grabbies</span>
@@ -69,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-soft-section">
+      <section>
         <div className="container">
           <div className="section-head center">
             <span className="eyebrow" style={{ justifyContent: 'center' }}>What Our Partners Say</span>
