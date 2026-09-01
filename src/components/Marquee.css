@@ -12,12 +12,12 @@
 .marquee-track {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 40px;
   width: max-content;
 }
 
 .marquee-item { flex-shrink: 0; display: flex; align-items: center; }
-.marquee-item img { height: 34px; width: auto; }
+.marquee-item img { height: 56px; width: auto; }
 .marquee-placeholder {
   padding: 12px 26px; border-radius: 100px; border: 1.5px dashed var(--line);
   font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; color: var(--body-soft);

@@ -22,9 +22,9 @@ export default function Home() {
 
       <VerticalsGrid />
 
-      <section className="bg-soft-section">
+      <section className="bg-soft-section" style={{ padding: '48px 0' }}>
         <div className="container">
-          <div className="section-head center">
+          <div className="section-head center" style={{ marginBottom: 32 }}>
             <span className="eyebrow" style={{ justifyContent: 'center' }}>What's Stocked</span>
             <h2>Brands you already know</h2>
             <p>A curated mix of snack, beverage and daily-essential brands, stocked fresh in every machine.</p>
