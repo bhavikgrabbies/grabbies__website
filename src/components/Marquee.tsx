@@ -7,12 +7,28 @@ export interface MarqueeItem {
 }
 
 const PX_PER_SECOND = 40;
+const RESUME_AFTER_IDLE_MS = 1200;
 
 export default function Marquee({ items, reverse }: { items: MarqueeItem[]; reverse?: boolean }) {
   // Duplicated so scrollLeft can wrap seamlessly at the halfway point.
   const looped = [...items, ...items];
   const trackRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  // Resuming is always driven by this idle timer rather than by pairing up
+  // enter/leave or down/up events directly — those pairs can desync on touch
+  // devices (e.g. a synthetic mouseenter with no matching mouseleave), which
+  // used to leave the marquee paused forever after a single interaction.
+  const pauseAndScheduleResume = () => {
+    setPaused(true);
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    resumeTimer.current = setTimeout(() => setPaused(false), RESUME_AFTER_IDLE_MS);
+  };
+
+  useEffect(() => () => {
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+  }, []);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -45,12 +61,9 @@ export default function Marquee({ items, reverse }: { items: MarqueeItem[]; reve
     <div
       className="marquee"
       ref={trackRef}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onPointerDown={() => setPaused(true)}
-      onPointerUp={() => setPaused(false)}
-      onTouchStart={() => setPaused(true)}
-      onTouchEnd={() => setPaused(false)}
+      onMouseEnter={pauseAndScheduleResume}
+      onPointerDown={pauseAndScheduleResume}
+      onTouchStart={pauseAndScheduleResume}
     >
       <div className="marquee-track">
         {looped.map((item, i) => (
