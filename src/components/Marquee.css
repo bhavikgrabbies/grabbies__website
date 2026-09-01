@@ -6,8 +6,14 @@
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   cursor: grab;
+  padding: 8px 0 22px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--orange) transparent;
 }
 .marquee:active { cursor: grabbing; }
+.marquee::-webkit-scrollbar { height: 6px; }
+.marquee::-webkit-scrollbar-track { background: transparent; }
+.marquee::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 100px; }
 
 .marquee-track {
   display: flex;
