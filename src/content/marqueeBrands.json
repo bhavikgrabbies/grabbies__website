@@ -18,21 +18,20 @@
     { "name": "Bazaana Foods", "logo": "/img/brands/bazaana.png" },
     { "name": "SuperYou", "logo": "/img/brands/superyou.svg" },
     { "name": "BeBrawn", "logo": "/img/brands/bebrawn.png" },
-    { "name": "Nuvie", "logo": "/img/brands/nuvie.png" },
+    { "name": "Nuvie", "logo": "/img/brands/nuvie.jpg" },
     { "name": "Fast&Up", "logo": "/img/brands/fastandup.png" },
     { "name": "Wellbeing Nutrition", "logo": "/img/brands/wellbeing.png" },
     { "name": "Thryve Nutrition", "logo": "/img/brands/thryve.png" },
     { "name": "Titanium Blend", "logo": "/img/brands/titaniumblend.png" },
-    { "name": "Chase", "logo": "/img/brands/chase.webp" },
+    { "name": "Chase", "logo": "/img/brands/chase.png" },
     { "name": "Too Yumm!", "logo": "/img/brands/tooyumm.png" },
     { "name": "Mulberry", "logo": "/img/brands/mulberry.png" },
     { "name": "Cavin's", "logo": "/img/brands/cavins.png" },
-    { "name": "MuscleBlaze" },
-    { "name": "Max Protein" },
-    { "name": "True Basics" },
-    { "name": "Dilmure" },
+    { "name": "MuscleBlaze", "logo": "/img/brands/muscleblaze.svg" },
+    { "name": "Max Protein", "logo": "/img/brands/maxprotein.png" },
+    { "name": "True Basics", "logo": "/img/brands/truebasics.png" },
+    { "name": "Dilmure", "logo": "/img/brands/dilmure.png" },
     { "name": "Cravino" },
-    { "name": "SuperGrub" },
-    { "name": "ULA" }
+    { "name": "SuperGrub", "logo": "/img/brands/supergrub.png" }
   ]
 }
