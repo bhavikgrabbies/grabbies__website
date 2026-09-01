@@ -1,10 +1,10 @@
 {
   "items": [
-    { "name": "Brand Partner 1" },
-    { "name": "Brand Partner 2" },
-    { "name": "Brand Partner 3" },
-    { "name": "Brand Partner 4" },
-    { "name": "Brand Partner 5" },
-    { "name": "Brand Partner 6" }
+    { "name": "Coca-Cola", "logo": "/img/brands/coca-cola.svg" },
+    { "name": "Pepsi", "logo": "/img/brands/pepsi.svg" },
+    { "name": "Red Bull", "logo": "/img/brands/red-bull.svg" },
+    { "name": "Lay's", "logo": "/img/brands/lays.svg" },
+    { "name": "Haldiram's", "logo": "/img/brands/haldirams.png" },
+    { "name": "MuscleBlaze" }
   ]
 }
