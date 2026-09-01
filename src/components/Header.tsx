@@ -20,7 +20,6 @@ export default function Header() {
   const [expanded, setExpanded] = useState(false);
   const [open, setOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(110);
-  const [debugScrollY, setDebugScrollY] = useState(0);
   const sentinelRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const location = useLocation();
@@ -37,7 +36,6 @@ export default function Header() {
 
     const onScroll = () => {
       const y = window.scrollY || document.documentElement.scrollTop || 0;
-      setDebugScrollY(y);
       applyPast(y > MINIMIZE_AT);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -120,8 +118,6 @@ export default function Header() {
             </button>
           </div>
         </div>
-        {/* TEMPORARY debug readout — remove once the fix is confirmed working. */}
-        <div className="header-debug">y:{Math.round(debugScrollY)} min:{String(minimized)}</div>
       </header>
       <div className="header-spacer" style={{ height: headerHeight }} aria-hidden="true" />
     </>

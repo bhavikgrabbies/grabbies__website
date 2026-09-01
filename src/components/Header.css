@@ -2,21 +2,31 @@
   position: absolute; top: 0; left: 0; width: 1px; height: 1px;
   pointer-events: none; opacity: 0;
 }
-.header-debug {
-  position: fixed; top: 4px; right: 4px; z-index: 999;
-  background: #000; color: #0f0; font-family: monospace; font-size: 11px;
-  padding: 3px 8px; border-radius: 6px; pointer-events: none;
-}
 .header-spacer { transition: height .25s ease; }
 .site-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease;
+}
+/*
+  The frosted-glass background lives on a ::before pseudo-element rather
+  than directly on .site-header. backdrop-filter (like transform/filter)
+  creates a new CSS "containing block" for any position:fixed descendant —
+  since .nav-links is fixed-positioned on mobile, having backdrop-filter on
+  its ancestor .site-header was positioning it relative to the small header
+  box instead of the full screen, collapsing the mobile menu into a tiny
+  broken overlay. A ::before is a sibling layer, not an ancestor of the
+  header's real children, so it sidesteps the problem entirely.
+*/
+.site-header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
-  transition: border-color .3s ease, background .3s ease;
+  transition: background .3s ease;
 }
-.site-header.scrolled { border-bottom-color: var(--line); background: rgba(255,255,255,0.92); }
+.site-header.scrolled { border-bottom-color: var(--line); }
+.site-header.scrolled::before { background: rgba(255,255,255,0.92); }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
   padding: 18px 28px; max-width: var(--container); margin: 0 auto;
