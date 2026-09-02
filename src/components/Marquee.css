@@ -1,19 +1,41 @@
 .marquee {
   overflow-x: auto;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
   scroll-behavior: auto;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   cursor: grab;
   padding: 8px 0 22px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--orange) transparent;
+  /* Native scrollbar hidden — we draw our own always-visible progress bar
+     below instead, since OS/browser scrollbar auto-hide policies made the
+     native one disappear unpredictably. */
+  scrollbar-width: none;
 }
 .marquee:active { cursor: grabbing; }
-.marquee::-webkit-scrollbar { height: 6px; }
-.marquee::-webkit-scrollbar-track { background: transparent; }
-.marquee::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 100px; }
+.marquee::-webkit-scrollbar { display: none; }
+
+.marquee-progress-track {
+  position: relative;
+  height: 4px;
+  margin: 4px 28px 0;
+  max-width: calc(var(--container) - 56px);
+  background: var(--line);
+  border-radius: 100px;
+  overflow: hidden;
+}
+@media (min-width: 1257px) {
+  .marquee-progress-track { margin-left: auto; margin-right: auto; }
+}
+@media (max-width: 720px) {
+  .marquee-progress-track { margin: 4px 20px 0; max-width: calc(100% - 40px); }
+}
+.marquee-progress-thumb {
+  position: absolute;
+  top: 0; left: 0; height: 100%;
+  width: 18%;
+  background: var(--orange);
+  border-radius: 100px;
+}
 
 .marquee-track {
   display: flex;

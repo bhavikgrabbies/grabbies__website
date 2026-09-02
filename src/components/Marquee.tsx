@@ -13,6 +13,7 @@ export default function Marquee({ items, reverse }: { items: MarqueeItem[]; reve
   // Duplicated so scrollLeft can wrap seamlessly at the halfway point.
   const looped = [...items, ...items];
   const trackRef = useRef<HTMLDivElement>(null);
+  const thumbRef = useRef<HTMLDivElement>(null);
 
   // Everything here runs off plain refs/closures inside one stable effect,
   // deliberately avoiding React state for the pause/resume flag. Driving
@@ -35,10 +36,18 @@ export default function Marquee({ items, reverse }: { items: MarqueeItem[]; reve
       if (resumeTimeout) clearTimeout(resumeTimeout);
       resumeTimeout = setTimeout(() => { paused = false; }, RESUME_AFTER_IDLE_MS);
     };
+    // Only treat wheel input as an interaction when it's actually horizontal
+    // (trackpad two-finger swipe) — a plain vertical mouse-wheel scroll of
+    // the page while the cursor happens to be over the marquee shouldn't
+    // pause it.
+    const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) pauseAndScheduleResume();
+    };
+
     track.addEventListener('mouseenter', pauseAndScheduleResume);
     track.addEventListener('pointerdown', pauseAndScheduleResume);
     track.addEventListener('touchstart', pauseAndScheduleResume, { passive: true });
-    track.addEventListener('wheel', pauseAndScheduleResume, { passive: true });
+    track.addEventListener('wheel', onWheel, { passive: true });
 
     let frame: number;
     let last = performance.now();
@@ -53,6 +62,10 @@ export default function Marquee({ items, reverse }: { items: MarqueeItem[]; reve
         if (next < 0) next += half;
         track.scrollLeft = next;
       }
+      if (half > 0 && thumbRef.current) {
+        const progress = (track.scrollLeft % half) / half;
+        thumbRef.current.style.transform = `translateX(${progress * (100 / 0.18 - 100)}%)`;
+      }
       frame = requestAnimationFrame(step);
     };
     frame = requestAnimationFrame(step);
@@ -63,23 +76,28 @@ export default function Marquee({ items, reverse }: { items: MarqueeItem[]; reve
       track.removeEventListener('mouseenter', pauseAndScheduleResume);
       track.removeEventListener('pointerdown', pauseAndScheduleResume);
       track.removeEventListener('touchstart', pauseAndScheduleResume);
-      track.removeEventListener('wheel', pauseAndScheduleResume);
+      track.removeEventListener('wheel', onWheel);
     };
   }, [reverse]);
 
   return (
-    <div className="marquee" ref={trackRef}>
-      <div className="marquee-track">
-        {looped.map((item, i) => (
-          <span className="marquee-item" key={item.name + i}>
-            {item.logo ? (
-              <img src={item.logo} alt={item.name} />
-            ) : (
-              <span className="marquee-placeholder">{item.name}</span>
-            )}
-          </span>
-        ))}
+    <>
+      <div className="marquee" ref={trackRef}>
+        <div className="marquee-track">
+          {looped.map((item, i) => (
+            <span className="marquee-item" key={item.name + i}>
+              {item.logo ? (
+                <img src={item.logo} alt={item.name} />
+              ) : (
+                <span className="marquee-placeholder">{item.name}</span>
+              )}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
+      <div className="marquee-progress-track">
+        <div className="marquee-progress-thumb" ref={thumbRef} />
+      </div>
+    </>
   );
 }
