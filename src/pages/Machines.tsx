@@ -18,6 +18,9 @@ export default function Machines() {
       <section>
         <div className="container">
           <MachineGrid />
+          <p className="machine-showcase-note">
+            Every machine ships with touchscreen ordering, cashless payments and remote monitoring — we handle picking the right one for your space, so you don't have to.
+          </p>
         </div>
       </section>
       <section className="bg-soft-section">

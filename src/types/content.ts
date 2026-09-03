@@ -14,8 +14,6 @@ export interface Settings {
 export interface Machine {
   name: string;
   image: string;
-  tagline: string;
-  features: string[];
 }
 
 export interface Testimonial {

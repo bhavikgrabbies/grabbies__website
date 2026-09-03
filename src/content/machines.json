@@ -1,37 +1,7 @@
 {
   "items": [
-    {
-      "name": "Grabbies Combo",
-      "image": "/img/machines/machine-combo.jpeg",
-      "tagline": "Snacks, beverages and daily essentials in one always-on unit, with a touchscreen ordering panel.",
-      "features": [
-        "Touchscreen ordering",
-        "UPI, card and wallet payments",
-        "Remote inventory monitoring",
-        "Temperature-controlled shelving"
-      ]
-    },
-    {
-      "name": "Grabbies XL",
-      "image": "/img/machines/machine-drinks.jpeg",
-      "tagline": "A bigger beverage and snack range for high-footfall spaces, with the same touchscreen ordering panel.",
-      "features": [
-        "Wider drinks and snack range",
-        "Touchscreen ordering",
-        "UPI, card and wallet payments",
-        "Remote inventory monitoring"
-      ]
-    },
-    {
-      "name": "Grabbies Compact",
-      "image": "/img/machines/machine-slim.jpeg",
-      "tagline": "A slimmer footprint for tighter spaces, without compromising on range.",
-      "features": [
-        "Space-saving footprint",
-        "Touchscreen ordering",
-        "UPI, card and wallet payments",
-        "Remote inventory monitoring"
-      ]
-    }
+    { "name": "Grabbies vending machine", "image": "/img/machines/machine-combo.jpeg" },
+    { "name": "Grabbies vending machine", "image": "/img/machines/machine-drinks.jpeg" },
+    { "name": "Grabbies vending machine", "image": "/img/machines/machine-slim.jpeg" }
   ]
 }
