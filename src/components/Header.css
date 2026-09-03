@@ -37,12 +37,6 @@
 .logo { display: flex; align-items: center; }
 .logo img { height: 42px; width: auto; transition: height .25s ease; }
 .site-header.minimized .logo img { height: 22px; }
-.nav-expand {
-  display: flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; border-radius: 9px; border: 1px solid var(--line);
-  background: #fff; cursor: pointer; flex-shrink: 0; color: var(--ink);
-}
-.nav-expand svg { width: 16px; height: 16px; }
 .nav-links { display: flex; align-items: center; gap: 34px; }
 .nav-links a { font-weight: 600; font-size: 0.92rem; color: var(--ink); position: relative; padding: 4px 0; }
 .nav-links a::after {

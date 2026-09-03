@@ -17,7 +17,6 @@ export default function Header() {
   const s = settings as Settings;
   const [scrolled, setScrolled] = useState(false);
   const [pastThreshold, setPastThreshold] = useState(false);
-  const [expanded, setExpanded] = useState(false);
   const [open, setOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(110);
   const sentinelRef = useRef<HTMLDivElement>(null);
@@ -31,7 +30,6 @@ export default function Header() {
     const applyPast = (isPast: boolean) => {
       setScrolled(isPast);
       setPastThreshold(isPast);
-      if (isPast) setExpanded(false);
     };
 
     const onScroll = () => {
@@ -74,7 +72,7 @@ export default function Header() {
 
   useEffect(() => setOpen(false), [location.pathname]);
 
-  const minimized = pastThreshold && !expanded;
+  const minimized = pastThreshold;
 
   return (
     <>
@@ -98,15 +96,6 @@ export default function Header() {
           <div className="nav-cta">
             <a className="nav-phone" href={`tel:${s.phone_tel}`}>{s.phone_display}</a>
             <Link to="/contact" className="btn btn-primary btn-sm">Book a Demo</Link>
-            {minimized && (
-              <button
-                className="nav-expand"
-                aria-label="Expand header"
-                onClick={() => setExpanded(true)}
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="m6 9 6 6 6-6" /></svg>
-              </button>
-            )}
             <button
               className="nav-toggle"
               aria-label="Menu"
