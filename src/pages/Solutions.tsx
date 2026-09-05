@@ -7,7 +7,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 
 export default function Solutions() {
   const p = (pagesData as PagesContent).solutions;
-  usePageTitle('Solutions');
+  usePageTitle('Solutions', p.subtitle);
   return (
     <>
       <PageHero {...p} />

@@ -8,7 +8,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 export default function About() {
   const p = (pagesData as PagesContent).about;
   const img = images as ImagesContent;
-  usePageTitle('About');
+  usePageTitle('About', p.subtitle);
 
   return (
     <>

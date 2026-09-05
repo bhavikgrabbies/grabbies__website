@@ -15,7 +15,7 @@ function encode(data: Record<string, string>) {
 export default function Contact() {
   const s = settings as Settings;
   const p = (pagesData as PagesContent).contact;
-  usePageTitle('Contact');
+  usePageTitle('Contact', p.subtitle);
 
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 

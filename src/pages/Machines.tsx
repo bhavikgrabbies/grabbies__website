@@ -10,7 +10,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 export default function Machines() {
   const p = (pagesData as PagesContent).machines;
   const img = images as ImagesContent;
-  usePageTitle('Machines');
+  usePageTitle('Machines', p.subtitle);
 
   return (
     <>
