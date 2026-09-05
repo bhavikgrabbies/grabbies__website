@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <img src="/img/logo.svg" alt={s.brand} />
-            <p>Smart vending machines for offices, gyms, hospitals, campuses and malls — cashless, 24/7, fully managed. Serving {s.service_area}.</p>
+            <p>Smart vending machines for offices, gyms, hospitals, campuses and malls. Cashless, 24/7, fully managed. Serving {s.service_area}.</p>
           </div>
           <div className="footer-col">
             <h4>Explore</h4>

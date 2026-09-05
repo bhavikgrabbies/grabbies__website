@@ -18,7 +18,7 @@ export default function About() {
           <div className="split">
             <div>
               <h2>Convenience, wherever you are</h2>
-              <p>At the core of Grabbies is a tech-enabled ecosystem built around snacks, beverages and daily essentials — stocked and curated to meet the needs of professionals, students and urban commuters, anytime they need something on the go.</p>
+              <p>At the core of Grabbies is a tech-enabled ecosystem built around snacks, beverages and daily essentials, stocked and curated to meet the needs of professionals, students and urban commuters, anytime they need something on the go.</p>
               <p>From hardware to software, logistics to last-mile restocking, Grabbies delivers a turnkey retail experience that combines efficiency, automation and customer satisfaction.</p>
             </div>
             <img src={img.lounge} alt="Grabbies machines installed in a corporate lounge" style={{ borderRadius: 'var(--radius)' }} />
@@ -31,12 +31,12 @@ export default function About() {
           <div className="section-head center">
             <span className="eyebrow" style={{ justifyContent: 'center' }}>How We Operate</span>
             <h2>We know your location by name</h2>
-            <p>We operate across Delhi NCR. Every machine, every partner, every restock — we know your location by name. No call centres, no ticket numbers.</p>
+            <p>We operate across Delhi NCR. Every machine, every partner, every restock: we know your location by name. No call centres, no ticket numbers.</p>
           </div>
           <div className="verticals-grid-3">
-            <div><h3>We pick up the phone</h3><p>Machine issue? Call or WhatsApp us directly — real response in hours, with our local ops team able to reach your location the same day.</p></div>
-            <div><h3>Partners, not contracts</h3><p>Every venue is a partner with a name, not an account number — flexible terms, honest conversations, and a team invested in your success.</p></div>
-            <div><h3>Delhi NCR's fastest growing network</h3><p>Expanding rapidly, with the widest reach, smart vending, and more locations and convenience — that's the Grabbies promise.</p></div>
+            <div><h3>We pick up the phone</h3><p>Machine issue? Call or WhatsApp us directly for a real response in hours, with our local ops team able to reach your location the same day.</p></div>
+            <div><h3>Partners, not contracts</h3><p>Every venue is a partner with a name, not an account number. Flexible terms, honest conversations, and a team invested in your success.</p></div>
+            <div><h3>Delhi NCR's fastest growing network</h3><p>Expanding rapidly, with the widest reach, smart vending, and more locations and convenience. That's the Grabbies promise.</p></div>
           </div>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function About() {
         </div>
       </section>
 
-      <CTABand heading="Let's bring Grabbies to your space" body="Book a demo, or reach out with questions — we respond fast." />
+      <CTABand heading="Let's bring Grabbies to your space" body="Book a demo, or reach out with questions. We respond fast." />
     </>
   );
 }

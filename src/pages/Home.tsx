@@ -13,7 +13,7 @@ import marqueeBrands from '../content/marqueeBrands.json';
 
 export default function Home() {
   useEffect(() => {
-    document.title = 'Grabbies — Smart Vending Machines for Offices, Gyms & Campuses | Delhi NCR';
+    document.title = 'Grabbies: Smart Vending Machines for Offices, Gyms & Campuses | Delhi NCR';
   }, []);
   return (
     <>
@@ -75,7 +75,7 @@ export default function Home() {
 
       <CTABand
         heading="Ready to bring Grabbies to your space?"
-        body="Whether you're a corporate office, a venue owner, or exploring a franchise — let's talk."
+        body="Whether you're a corporate office, a venue owner, or exploring a franchise, let's talk."
         showPhone
       />
 

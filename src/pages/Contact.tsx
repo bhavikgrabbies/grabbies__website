@@ -64,7 +64,7 @@ export default function Contact() {
             </div>
             <div className="contact-info-item">
               <b>Response time</b>
-              <span>Real response within hours — same-day site visits available across Delhi NCR.</span>
+              <span>Real response within hours, with same-day site visits available across Delhi NCR.</span>
             </div>
           </div>
 
@@ -73,7 +73,7 @@ export default function Contact() {
 
             {status === 'sent' ? (
               <div className="form-success">
-                <b>Thanks — your enquiry is in.</b>
+                <b>Thanks, your enquiry is in.</b>
                 <p>We usually respond within a few hours. In the meantime, feel free to call or WhatsApp us directly.</p>
               </div>
             ) : (
@@ -113,7 +113,7 @@ export default function Contact() {
                     <textarea id="message" name="message" placeholder="Location, approximate daily footfall, and anything else useful..." />
                   </div>
                   {status === 'error' && (
-                    <p className="form-error">Something went wrong sending that — please call or WhatsApp us instead, or try again.</p>
+                    <p className="form-error">Something went wrong sending that. Please call or WhatsApp us instead, or try again.</p>
                   )}
                   <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={status === 'sending'}>
                     {status === 'sending' ? 'Sending…' : 'Send Enquiry'}

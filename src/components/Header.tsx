@@ -9,6 +9,7 @@ const NAV = [
   { to: '/machines', label: 'Machines' },
   { to: '/solutions', label: 'Solutions' },
   { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 const MINIMIZE_AT = 60;

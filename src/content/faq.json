@@ -2,7 +2,7 @@
   "items": [
     {
       "q": "What does it cost for a venue?",
-      "a": "For venues, there's no setup cost — Grabbies covers the machine, installation, and all operations. For corporates, we offer a fixed monthly rental covering hardware, software, and full management."
+      "a": "For venues, there's no setup cost. Grabbies covers the machine, installation, and all operations. For corporates, we offer a fixed monthly rental covering hardware, software, and full management."
     },
     {
       "q": "What footfall do you need?",
@@ -10,19 +10,19 @@
     },
     {
       "q": "How long does installation take?",
-      "a": "7–14 business days from enquiry to a live machine. We manage everything — you just provide the space and a power point."
+      "a": "7–14 business days from enquiry to a live machine. We manage everything, you just provide the space and a power point."
     },
     {
       "q": "How much does a franchise cost?",
-      "a": "Typically ₹3–5 lakhs for the machine and initial stock, with payback in 10–18 months. We walk you through detailed projections — no commitment required."
+      "a": "Typically ₹3–5 lakhs for the machine and initial stock, with payback in 10–18 months. We walk you through detailed projections, no commitment required."
     },
     {
       "q": "What products do the machines stock?",
-      "a": "A curated mix tailored to each location — protein-heavy at gyms, beverages and snacks at offices, affordable essentials at campuses."
+      "a": "A curated mix tailored to each location: protein-heavy at gyms, beverages and snacks at offices, affordable essentials at campuses."
     },
     {
       "q": "What payment methods are accepted?",
-      "a": "All machines accept UPI — PhonePe, GPay and Paytm — plus cards. Every transaction is logged in real time."
+      "a": "All machines accept UPI (PhonePe, GPay and Paytm) plus cards. Every transaction is logged in real time."
     },
     {
       "q": "Do machines work 24/7?",
@@ -38,7 +38,7 @@
     },
     {
       "q": "Can I track sales and performance?",
-      "a": "Yes — our IoT-connected machines offer a real-time dashboard to monitor sales, stock levels and machine performance from your phone or computer."
+      "a": "Yes, our IoT-connected machines offer a real-time dashboard to monitor sales, stock levels and machine performance from your phone or computer."
     }
   ]
 }

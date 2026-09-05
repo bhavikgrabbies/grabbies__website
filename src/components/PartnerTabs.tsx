@@ -19,7 +19,7 @@ const SEGMENTS: Segment[] = [
   {
     key: 'corporates', tab: 'For Corporates', eyebrow: 'For Corporates',
     title: 'A dedicated machine for your team',
-    body: 'A fixed monthly rental covers the machine, software and full operations — no upfront investment, no ops headache.',
+    body: 'A fixed monthly rental covers the machine, software and full operations, with no upfront investment or ops headache.',
     bullets: [
       { title: 'Monthly Rental Model', desc: 'Fixed fee covers machine, software and full ops.' },
       { title: 'Custom Product Mix', desc: "Tailored to your team's preferences." },
@@ -36,7 +36,7 @@ const SEGMENTS: Segment[] = [
   {
     key: 'venues', tab: 'For Venue Owners', eyebrow: 'For Venue Owners',
     title: 'A managed machine for your space',
-    body: 'Got a gym, hostel, clinic or high-footfall space? We place a Grabbies machine at no setup cost — fully installed and managed by our team.',
+    body: 'Got a gym, hostel, clinic or high-footfall space? We place a Grabbies machine at no setup cost. Fully installed and managed by our team.',
     bullets: [
       { title: 'Zero Setup Cost', desc: 'No upfront cost to host a machine at your location.' },
       { title: 'We Handle Everything', desc: 'Installation, restocking, maintenance. Entirely managed by us.' },
@@ -53,7 +53,7 @@ const SEGMENTS: Segment[] = [
   {
     key: 'brands', tab: 'For Brands & Distributors', eyebrow: 'For Brands & Distributors',
     title: 'Reach the right people, in the right place',
-    body: 'Our machines sit inside premium gyms, offices and universities — captive, high-value environments hard to reach through traditional retail.',
+    body: 'Our machines sit inside premium gyms, offices and universities: captive, high-value environments hard to reach through traditional retail.',
     bullets: [
       { title: 'Shelf Placement', desc: 'Get stocked across machines at relevant locations.' },
       { title: 'Sampling Campaigns', desc: 'Physical sampling at high-footfall captive locations.' },
